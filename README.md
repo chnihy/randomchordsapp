@@ -17,7 +17,6 @@ To launch app:
 
 1. Download as zip and install
  
-2. Navigate to project folder
+2. Navigate to project folder in terminal
 
-3. run:
-   python3 main.py
+3. enter: python3 main.py
