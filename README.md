@@ -14,9 +14,10 @@ Future plans:
 
 
 To launch app:
-Download zip and install
 
-Navigate to project folder
+1. Download as zip and install
+ 
+2. Navigate to project folder
 
-run:
-python3 main.py
+3. run:
+   python3 main.py
