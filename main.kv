@@ -1,0 +1,95 @@
+#: import r random
+
+# Styling stuff
+<Display>:
+	size_hint: 1, .65
+	canvas.before:
+		Color:
+			rgba: 1,1,1,1
+		Rectangle:
+			size: self.size
+			pos: self.pos
+
+<Graphics>:
+	cols: 4
+	rows: 3
+	width: 0
+	spacing: 10
+	size_hint: None, None
+	center: self.parent.center
+
+<Controls>:
+	#size_hint: 1, .35
+	cols: 3
+	padding: 10
+	spacing: 5
+
+<DifficultySettings>:
+	orientation: 'vertical'
+	size_hint: .33, 1
+
+
+
+# The App itself
+<MainLayout>:	
+	# Objects
+	graphics: graphics
+	chord_entry: chord_entry
+
+	BoxLayout:
+		size: self.parent.size
+		padding: 10
+		orientation: 'vertical'
+		
+		Display:
+			Graphics:
+				id: graphics
+
+		Splitter:
+			sizable_from: 'top'
+			max_size: 350
+			size_hint: 1, .35
+			Controls:
+				DifficultySettings:
+					Label:
+						text:'Select Difficulty'
+						canvas.before:
+							Color:
+								rgba: 0,0,1,.4
+							Rectangle:
+								size: self.size
+								pos: self.pos
+					ToggleButton:
+						id: easybtn
+						text:'Easy'
+						group: 'difficulty'
+						state: 'down'
+						on_press: root.set_difficulty(self.text)
+					ToggleButton:
+						id: mediumbtn
+						text:'Medium'
+						group: 'difficulty'
+						on_press: root.set_difficulty(self.text)
+					ToggleButton:
+						id: hardbtn
+						text:'Hard'
+						group: 'difficulty'
+						on_press: root.set_difficulty(self.text)
+				
+				Button:
+					text: "Go"
+					on_press: root.display_chord_buttons()
+
+				# Enter Number of Chords
+				TextInput:
+					id: chord_entry
+					title: "Num of Chords"
+					hint_text: '# of chords'
+					#text: '1'
+					input_filter: 'float'
+					multiline: False
+					font_size: 70
+					halign: 'center'
+					valign: 'center'
+					#padding: 0, 130, 0, 0
+					on_text_validate: root.display_chord_buttons()
