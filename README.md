@@ -6,6 +6,6 @@ Requires Kivy and Mingus, see dependencies.txt
 Future plans:
 - A prettier UI
 - More control over chord choices, keys, progressions
-- A dynamic interface that allows the user to more chords around in a progression
+- A dynamic interface that allows the user to change the order of the chords
 - Control over sounds
 - Playback with tracks
