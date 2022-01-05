@@ -11,6 +11,7 @@ from kivy.uix.boxlayout import BoxLayout
 from kivy.uix.floatlayout import FloatLayout
 
 from kivy.uix.button import Button
+from kivy.uix.label import Label
 
 from chords import randomchords, roots
 
@@ -77,6 +78,8 @@ class MainLayout(Widget):
 			num_of_chords = 1 
 		else:
 			num_of_chords = int(self.chord_entry.text)
+		
+
 
 		try:
 			# Clear out old buttons
@@ -85,7 +88,7 @@ class MainLayout(Widget):
 			# Max number of chords raises exception
 			if num_of_chords > 12:
 				raise TooManyChords
-
+			
 			# Generating our chordlist
 			chordlist = randomchords(self.difficulty_state, num_of_chords)			
 
@@ -109,12 +112,19 @@ class MainLayout(Widget):
 				self.graphics.width = 4 * chord_button.width
 			
 			# Centering grid in display
-			#self.graphics.center = self.graphics.parent.center
-			self.graphics.pos_hint={'center_x': .5, 'center_y': .7}
+			self.graphics.center = self.graphics.parent.center
+			#self.graphics.pos_hint={'center_x': .5, 'center_y': .7}
 		
 		# Exceptions
 		except TooManyChords:
-				print('Error, too many chords')
+				error_msg = Label(text = 'Error, too many chords', 
+								size_hint=(None,None ), 
+								font_size=30, 
+								color=(0,0,0,1), 
+								center=self.parent.center)
+				self.graphics.width = error_msg.width
+				self.graphics.add_widget(error_msg)
+				self.graphics.center = self.graphics.parent.center
 
 	# Enter key function
 	def _on_keyboard_down(self, instance, keyboard, keycode, text, modifiers):
