@@ -1,4 +1,7 @@
 #! python3
+# TODO Make it prettier
+# TODO Chords need to be higher up, they're too low on screen
+
 
 import kivy
 from kivy.app import App
