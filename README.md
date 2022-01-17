@@ -19,4 +19,8 @@ To launch app:
  
 2. Navigate to project folder in terminal
 
-3. enter: python3 main.py
+3. Activate venv (which contains dependencies)
+ - $ source ./rca_venv/bin/activate
+
+4. Run the program with:
+ - $ python3 main.py
