@@ -1,4 +1,11 @@
 #! python3
+
+# ==================================================== #
+# Random Chords App - generates random chords!		   #
+# midi playback via Mingus module					   #
+# UI via Kivy module                                   #
+# ==================================================== #
+
 # TODO Make it prettier
 # TODO Chords need to be higher up, they're too low on screen
 
