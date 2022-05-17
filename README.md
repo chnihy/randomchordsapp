@@ -1,26 +1,36 @@
 # randomchordsapp
 A random chord generation app using Kivy UI and the Mingus MIDI package 
 
-Requires Kivy and Mingus, see dependencies.txt
+<img src="/static/preview.png" alt="preview">
 
-Future plans:
-- Packaging to be a standalone app
-- Pacakaging for mobile
+## Requirements
+<a href="https://kivy.org/#home">Kivy</a><br>
+<a href="https://bspaans.github.io/python-mingus/">Mingus</a><br>
+```bash
+pip3 install -r requirements.txt
+```
+
+## Future plans:
+- Making into a web app with flask
 - A prettier UI
 - More control over chord choices, keys, progressions
-- A dynamic interface that allows the user to change the order of the chords
-- Control over sounds
-- Playback with tracks
+- A dynamic user interface that allows the user to change the order of the chords
+- Control over sounds (piano, guitar, synth)
 
 
-To launch app:
+## To launch app:
+1. Clone repo
+```bash
+git clone https://github.com/chnihy/randomchordsapp.git
+cd randomchordsapp
+```
 
-1. Download as zip and install
- 
-2. Navigate to project folder in terminal
+2. Install requirements
+```bash
+pip3 install -r requirements.txt
+```
 
-3. Activate venv (which contains dependencies)
- - $ source ./rca_venv/bin/activate
-
-4. Run the program with:
- - $ python3 main.py
+3. Launch app
+```bash
+python3 main.py
+```
